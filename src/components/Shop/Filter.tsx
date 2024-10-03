@@ -56,7 +56,7 @@ const Filter: FunctionComponent = () => {
 
     return (
         <>
-            <div className='flex flex-col space-y-4 w-[25%] mx-4 border-[1px] border-gray p-3 rounded-xl'>
+            <div className='flex flex-col space-y-4 w-full mx-4 border-[1px] border-gray p-3 rounded-xl'>
                 <div className='flex flex-row items-center justify-between'>
                     <h1 className='font-bold'>Filters</h1>
                     <button className='px-3 py-2 text-secondary rounded-xl'>Clear All</button>

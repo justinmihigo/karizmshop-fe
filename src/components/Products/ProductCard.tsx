@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 // import AddCircle from "@mui/icons-material/AddCircle";
 // import FavoriteOutlined from "@mui/icons-material/FavoriteOutlined";
 import FavoriteBorderRounded from "@mui/icons-material/FavoriteBorderRounded";
 import Add from "@mui/icons-material/Add";
-import { Star } from "@mui/icons-material";
+import { Rating } from "@mui/material";
+import { Link } from "react-router-dom";
 export interface ProductCard {
     name: string;
     type: string;
@@ -15,7 +15,7 @@ export interface ProductCard {
     owner?: string;
     onClick?: Function;
 }
-const productCard = ({ name, type, price, image, description, discount, rating }: ProductCard) => {
+const productCard = ({ name, type, price, image, description, discount, rating, owner, onClick }: ProductCard) => {
     return (
         <>
             <div>
@@ -28,24 +28,18 @@ const productCard = ({ name, type, price, image, description, discount, rating }
                     </div>
                     <div className="flex flex-col space-y-2 py-3 mx-4">
                         <div className="flex flex-row justify-between items-center">
-                            <h2 className="font-bold">{name}</h2>
+                            <Link to='/productDetails'className="font-bold">{name}</Link>
                             <button className="p-1 rounded-lg bg-[#F3F4F6]"><FavoriteBorderRounded htmlColor="black" /></button>
                         </div>
                         <div>
                             <p className="text-sm">Category: {type}</p>
                         </div>
                         <div>
-                            <p className="text-[#00000060] text-[14px]">{description}</p>
+                            <p className="text-[#00000060] text-[14px]">{description.slice(0,30)+'...'}</p>
                         </div>
                         <div className="flex flex-row items-center">
                             <span>Rating: {rating}</span> &nbsp;&nbsp;
-                            <span>
-                                <Star fontSize='small' htmlColor='#F3C63F' />
-                                <Star fontSize='small' htmlColor='#F3C63F' />
-                                <Star fontSize='small' htmlColor='#F3C63F' />
-                                <Star fontSize='small' htmlColor='#F3C63F' />
-                                <Star fontSize='small' htmlColor='#F3C63F' />
-                            </span>
+                            <Rating value={Number(rating)}/>
                         </div>
 
                         <div className="flex flex-row justify-between items-center font-bold ">
