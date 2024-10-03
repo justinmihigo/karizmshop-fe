@@ -1,22 +1,26 @@
-import {FunctionComponent} from 'react'
-import { Outlet } from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import { Outlet } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer/Footer';
 
-const HomeLayout:FunctionComponent = () => {
+function HomeLayout() {
   return (
-    <>
-    <div>
-        <Navbar/>
-    </div>
-    <div>
+    <div className="flex flex-col">
+      {/* Fixed Navbar */}
+      <header className="fixed top-0 left-0 right-0 z-10">
+        <Navbar />
+      </header>
+
+      {/* Scrollable Outlet Section */}
+      <main className="flex-grow mt-16 overflow-y-auto">
         <Outlet />
-    </div>
-    <div>
+      </main>
+
+      {/* Fixed Footer */}
+      <footer className="fixed bottom-0 left-0 right-0 z-10">
         <Footer />
+      </footer>
     </div>
-    </>
-  )
+  );
 }
 
-export default HomeLayout
+export default HomeLayout;

@@ -1,5 +1,3 @@
-// import AddCircle from "@mui/icons-material/AddCircle";
-// import FavoriteOutlined from "@mui/icons-material/FavoriteOutlined";
 import FavoriteBorderRounded from "@mui/icons-material/FavoriteBorderRounded";
 import Add from "@mui/icons-material/Add";
 
@@ -14,7 +12,7 @@ export interface ProductCard {
     owner?: string;
     onClick?: Function;
 }
-const productCard = ({ name, type, price, image, description, discount, rating, owner, onClick }: ProductCard) => {
+const productCard = ({ name, type, price, image, description, discount, rating }: ProductCard) => {
     return (
         <>
             <div>

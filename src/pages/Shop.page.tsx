@@ -1,4 +1,4 @@
-import ProductCard from "../components/Products/productCard"
+import ProductCard from "../components/Products/ProductCard"
 import Filter from "../components/Shop/Filter"
 
 
