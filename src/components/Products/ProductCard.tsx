@@ -1,5 +1,3 @@
-// import AddCircle from "@mui/icons-material/AddCircle";
-// import FavoriteOutlined from "@mui/icons-material/FavoriteOutlined";
 import FavoriteBorderRounded from "@mui/icons-material/FavoriteBorderRounded";
 import Add from "@mui/icons-material/Add";
 import { Rating } from "@mui/material";

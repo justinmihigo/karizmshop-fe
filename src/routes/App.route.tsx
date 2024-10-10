@@ -26,6 +26,9 @@ import AllCategories from "../components/dashboard/Artist/Category/AllCategory.t
 import AddMusicForm from "../components/dashboard/Artist/music/AddMusic.tsx";
 import AllMusicTable from "../components/dashboard/Artist/music/AllMusic.tsx";
 import AllProducts from "../components/dashboard/Product/AllProducts.tsx";
+import Cart from "../pages/Cart.page.tsx";
+import Wishlist from "../pages/Wishlist.page.tsx";
+import Checkout from "../pages/Checkout.page.tsx";
 const AppRoutes: FunctionComponent = () => {
   return (
     <>
@@ -35,6 +38,9 @@ const AppRoutes: FunctionComponent = () => {
             <Route index path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/productDetails" element={<ProductDetails />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/contact" element={<ContactForm />} />
