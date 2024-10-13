@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { MdDashboard, MdMusicNote } from 'react-icons/md';
-import { GiClothes, GiBookshelf, GiBasketballBasket } from 'react-icons/gi';
-import { FaTshirt, FaUser } from 'react-icons/fa';
+import {  GiBookshelf } from 'react-icons/gi';
+import {  FaUser } from 'react-icons/fa';
 import { FiShoppingCart, FiSettings } from 'react-icons/fi';
-import {
-  ChevronDown,
-  ChevronRight,
-  Package,
-} from 'lucide-react';
+import { ChevronDown, ChevronRight, Package } from 'lucide-react';
 import { AiFillProduct } from "react-icons/ai";
+
 const sideBarItems = [
   {
     path: '/dashboard',
@@ -21,11 +18,11 @@ const sideBarItems = [
     icon: <FiShoppingCart className="icon" />,
     subItems: [
       {
-        path: '/shop/add',
+        path: '/dashboard/shop/add',
         name: 'Add Shop',
       },
       {
-        path: '/shop/all',
+        path: '/dashboard/shop/all',
         name: 'All Shop',
       },
     ],
@@ -34,41 +31,50 @@ const sideBarItems = [
     name: 'Categories',
     icon: <Package className="icon" />,
     subItems: [
-      { path: '/shop/books', name: 'Books', icon: <GiBookshelf /> },
-      { path: '/shop/coaching', name: 'Coaching materials', icon: <GiClothes /> },
-      { path: '/shop/beauty', name: 'Beauty', icon: <GiBasketballBasket /> },
-      { path: '/shop/fun-club', name: 'Fun Club', icon: <GiBasketballBasket /> },
+      { path: '/dashboard/category/add', name: 'Add Category' },
+      { path: '/dashboard/category/all', name: 'All Categories' },
+
+      // { path: '/shop/coaching', name: 'Coaching materials', icon: <GiClothes /> },
+      // { path: '/shop/beauty', name: 'Beauty', icon: <GiBasketballBasket /> },
+      // { path: '/shop/fun-club', name: 'Fun Club', icon: <GiBasketballBasket /> },
+    ],
+  },
+  {
+    name: 'Books',
+    icon: <GiBookshelf className="icon" />,
+    subItems: [
+      { path: '/dashboard/books/add', name: 'Add Book' },
+      { path: '/dashboard/books/All', name: 'All Books' },
     ],
   },
   {
     name: 'Music',
     icon: <MdMusicNote className="icon" />,
     subItems: [
-      { path: '/music/all', name: 'All Music' },
-      { path: '/music/create', name: 'Create Music' },
+      { path: '/dashboard/music/all', name: 'All Music' },
+      { path: '/dashboard/music/create', name: 'Create Music' },
     ],
   },
-  {
-    name: 'Fashion',
-    icon: <GiClothes className="icon" />,
-    subItems: [
-      { path: '/fashion/clothes', name: 'Clothes', icon: <FaTshirt /> },
-      { path: '/fashion/accessories', name: 'Accessories' },
-    ],
-  },
+  // {
+  //   name: 'Fashion',
+  //   icon: <GiClothes className="icon" />,
+  //   subItems: [
+  //     { path: '/fashion/clothes', name: 'Clothes', icon: <FaTshirt /> },
+  //     { path: '/fashion/accessories', name: 'Accessories' },
+  //   ],
+  // },
   {
     name: 'User',
     icon: <FaUser className="icon" />,
     subItems: [
-      { path: '/user/profile', name: 'Profile' },
-      { path: '/user/settings', name: 'Settings' },
+      { path: '/dashboard/user/profile', name: 'Profile' },
     ],
   },
   {
     name: 'Product',
     icon: <AiFillProduct className="icon" />,
     subItems: [
-      { path: '/dashboard/product/add', name: 'Add product'},
+      { path: '/dashboard/product/add', name: 'Add product' },
       { path: '/dashboard/product/all', name: 'All product' },
     ],
   },
@@ -79,7 +85,6 @@ const sideBarItems = [
       { path: '/dashboard/orders/all', name: 'All Order' },
     ],
   },
-  
   {
     path: '/settings',
     name: 'Setting',
@@ -148,7 +153,7 @@ function SideBarItem({ item, activeItem, setActiveItem }: SideBarItemProps) {
             >
               <a
                 href={subItem.path}
-                className="flex items-center gap-3 text-lg  "
+                className="flex items-center gap-3 text-lg"
                 onClick={() => setActiveItem(subItem.name)}
               >
                 {subItem.icon && subItem.icon}
