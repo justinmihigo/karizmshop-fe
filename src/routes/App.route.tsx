@@ -14,6 +14,7 @@ import DisplayProduct from "../components/dashboard/Artist/DisplayProduct.tsx";
 import DashboardLayout from "../components/dashboard/Artist/DashbordLayout.tsx";
 import ArtistDashHome from "../components/dashboard/Artist/ArtistDashHome.tsx";
 import AddProducts from "../components/dashboard/Product/addProducts.tsx";
+import ProductDetails from "../pages/ProductDetails.page.tsx";
 import OrdersTable from "../components/dashboard/Table/OrdersTable.tsx";
 const AppRoutes: FunctionComponent = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes: FunctionComponent = () => {
           <Route element={<HomeLayout />}>
             <Route index path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/productDetails" element={<ProductDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/contact" element={<ContactForm />} />
@@ -43,7 +45,6 @@ const AppRoutes: FunctionComponent = () => {
           <Route path="/dashboard/product" element={<DisplayProduct />} />
           <Route path="/dashboard/product/add" element={<AddProducts />} />
           <Route path="/dashboard/orders/all" element={<OrdersTable />} />
-
 
           </Route>
         </Routes>
