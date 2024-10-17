@@ -16,6 +16,16 @@ import ArtistDashHome from "../components/dashboard/Artist/ArtistDashHome.tsx";
 import AddProducts from "../components/dashboard/Product/addProducts.tsx";
 import ProductDetails from "../pages/ProductDetails.page.tsx";
 import OrdersTable from "../components/dashboard/Table/OrdersTable.tsx";
+import AddShopForm from "../components/dashboard/Artist/Shop/AddShopForm.tsx";
+import MyShops from "../components/dashboard/Artist/Shop/Myshops.tsx";
+import AddCategoryForm from "../components/dashboard/Artist/Category/AddCategoryForm.tsx";
+import Profile from "../components/dashboard/Artist/Profile/Profile.tsx";
+import PostBook from "../components/dashboard/Artist/Books/PostBook.tsx";
+import AllBooks from "../components/dashboard/Artist/Books/AllBooks.tsx";
+import AllCategories from "../components/dashboard/Artist/Category/AllCategory.tsx";
+import AddMusicForm from "../components/dashboard/Artist/music/AddMusic.tsx";
+import AllMusicTable from "../components/dashboard/Artist/music/AllMusic.tsx";
+import AllProducts from "../components/dashboard/Product/AllProducts.tsx";
 const AppRoutes: FunctionComponent = () => {
   return (
     <>
@@ -44,7 +54,20 @@ const AppRoutes: FunctionComponent = () => {
 
           <Route path="/dashboard/product" element={<DisplayProduct />} />
           <Route path="/dashboard/product/add" element={<AddProducts />} />
+          <Route path="/dashboard/product/all" element={<AllProducts />} />
+
           <Route path="/dashboard/orders/all" element={<OrdersTable />} />
+          <Route path="/dashboard/shop/add" element={<AddShopForm />} />
+          <Route path="/dashboard/shop/all" element={<MyShops />} />
+          <Route path="/dashboard/category/add" element={<AddCategoryForm />} />
+          <Route path="/dashboard/category/all" element={<AllCategories />} />
+
+          <Route path="/dashboard/user/profile" element={<Profile />} />
+          <Route path="/dashboard/books/add" element={<PostBook />} />
+          <Route path="/dashboard/books/all" element={<AllBooks />} />
+          <Route path="/dashboard/music/create" element={<AddMusicForm />} />
+          <Route path="/dashboard/music/all" element={<AllMusicTable />} />
+
 
           </Route>
         </Routes>
