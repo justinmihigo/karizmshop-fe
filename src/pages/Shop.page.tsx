@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ProductCard from "../components/Products/ProductCard"
 
 import Filter from "../components/Shop/Filter"
-import { SearchRounded, ArrowRightAltOutlined } from "@mui/icons-material"
+import { SearchRounded} from "@mui/icons-material"
 import BannerAd from "../components/Shop/bannerAd"
 const products = [
   {
