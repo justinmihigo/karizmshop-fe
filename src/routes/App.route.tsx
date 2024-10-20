@@ -28,7 +28,14 @@ import AllMusicTable from "../components/dashboard/Artist/music/AllMusic.tsx";
 import AllProducts from "../components/dashboard/Product/AllProducts.tsx";
 import Cart from "../pages/Cart.page.tsx";
 import Wishlist from "../pages/Wishlist.page.tsx";
-import Checkout from "../pages/Checkout.page.tsx";
+import Checkout from "../pages/checkout.page.tsx";
+import AdminDashbordLayout from "../components/dashboard/Admin/AdminDashbordLayout.tsx";
+import AdminDashHome from "../components/dashboard/Admin/AdminDashHome.tsx";
+import TableUserRole from "../components/dashboard/Admin/TableUserRole.tsx";
+import UserManage from "../components/dashboard/Admin/UserManage.tsx";
+import ShopApprovalTable from "../components/dashboard/Admin/ApprovalShop.tsx";
+import AdminAddCategoryForm from "../components/dashboard/Admin/Category/AddCategoryForm.tsx";
+import AdminAllCategories from "../components/dashboard/Admin/Category/AllCategory.tsx";
 const AppRoutes: FunctionComponent = () => {
   return (
     <>
@@ -73,6 +80,15 @@ const AppRoutes: FunctionComponent = () => {
           <Route path="/dashboard/books/all" element={<AllBooks />} />
           <Route path="/dashboard/music/create" element={<AddMusicForm />} />
           <Route path="/dashboard/music/all" element={<AllMusicTable />} />
+          </Route>
+          <Route  element={<AdminDashbordLayout />}>
+          <Route index path="/dashboard/admin" element={<AdminDashHome />} />
+          <Route path="/dashboard/admin/users/roles" element={<TableUserRole />} />
+          <Route path="/dashboard/admin/users/all" element={<UserManage />} />
+          <Route path="/dashboard/admin/shops/approval" element={<ShopApprovalTable />} />
+
+          <Route path="/dashboard/admin/category/add" element={<AdminAddCategoryForm />} />
+          <Route path="/dashboard/admin/category/all" element={<AdminAllCategories />} />
 
 
           </Route>

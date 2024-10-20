@@ -27,7 +27,6 @@ interface Shop {
     description: string;
   }
   
-
 interface EditShopModalProps {
   isOpen: boolean;
   onClose: () => void;

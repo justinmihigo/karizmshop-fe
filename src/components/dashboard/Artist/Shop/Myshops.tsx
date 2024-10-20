@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { MdDelete, MdModeEdit } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
-import EditShopModal from "./EditShopModal";
-import ConfirmationModal from "./ConfirmationModal";
+import EditShopModal from "../../PopupModels/EditShopModal";
+import ConfirmationModal from "../../PopupModels/ConfirmationShopDeleteModal";
 interface Shop {
   id: number;
   name: string;
@@ -276,7 +276,7 @@ const MyShops = () => {
           onSubmit={handleUpdateShop}
         />
       )}
-              {isConfirmOpen && ( // Render the confirmation modal
+        {isConfirmOpen && ( 
           <ConfirmationModal
             isOpen={isConfirmOpen}
             onClose={() => setIsConfirmOpen(false)}

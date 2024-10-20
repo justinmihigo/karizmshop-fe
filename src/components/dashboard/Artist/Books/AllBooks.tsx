@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { MdDelete, MdModeEdit } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
-
+import ConfirmationModal from "../../PopupModels/ConfirmationDeleteBookModal";
+import EditBooksModal from "../../PopupModels/EditBookModel";
 interface Book {
   id: number;
   bookName: string;
@@ -14,6 +15,7 @@ interface Book {
   status: "Available" | "Out of Stock";
   publishedDate: string;
 }
+
 
 
   const books: Book[] = [
@@ -203,6 +205,11 @@ const AllBooks = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const booksPerPage = 5;
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false); 
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [isEditOpen, setIsEditOpen] = useState(false);
+
+
 
   const filteredBooks = books.filter(
     (book) =>
@@ -217,7 +224,25 @@ const AllBooks = () => {
   const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
 
   const handlePageChange = (pageNumber: number) => setCurrentPage(pageNumber);
+  const handleDeleteClick = (book: Book) => {
+    setSelectedBook(book);
+    setIsConfirmOpen(true); 
+  };
 
+  const confirmDelete = () => {
+    if (selectedBook) {
+      console.log(`Deleted Shop: ${selectedBook.bookName}`);
+    }
+    setSelectedBook(null);
+  };
+  const handleEditClick = (book: Book) => {
+    setSelectedBook(book);
+    setIsEditOpen(true);
+  };
+  const handleSaveEdit = (updatedBook: Book) => {
+    console.log("Updated Book: ", updatedBook);
+    setIsEditOpen(false);
+  };
   return (
     <section className="mx-auto p-6 font-mono w-full">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">All Books</h2>
@@ -285,10 +310,16 @@ const AllBooks = () => {
                     <td className="px-4 py-3 border-b">{book.publishedDate}</td>
                     <td className="px-4 py-3 border-b">
                       <div className="flex items-center space-x-2">
-                        <button className="text-blue hover:text-blue-700 text-lg cursor-pointer">
+                        <button className="text-blue hover:text-blue-700 text-lg cursor-pointer"
+                                             onClick={() => handleEditClick(book)}
+
+                        >
                           <MdModeEdit />
                         </button>
-                        <button className="text-red hover:text-red-700 text-lg cursor-pointer">
+                        <button className="text-red hover:text-red-700 text-lg cursor-pointer" 
+                                              onClick={() => handleDeleteClick(book)} 
+
+                        >
                           <MdDelete />
                         </button>
                       </div>
@@ -329,6 +360,20 @@ const AllBooks = () => {
             ))}
           </div>
         </div>
+        {isConfirmOpen && (
+          <ConfirmationModal
+            isOpen={isConfirmOpen}
+            onClose={() => setIsConfirmOpen(false)}
+            onConfirm={confirmDelete}
+          />
+        )}
+              {/* Edit Modal */}
+      <EditBooksModal
+        isOpen={isEditOpen}
+        book={selectedBook}
+        onClose={() => setIsEditOpen(false)}
+        onSave={handleSaveEdit}
+      />
       </div>
     </section>
   );
