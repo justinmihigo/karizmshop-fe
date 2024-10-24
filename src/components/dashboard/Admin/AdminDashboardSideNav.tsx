@@ -7,7 +7,7 @@ import { ChevronDown, ChevronRight, Package } from 'lucide-react';
 
 const sideBarItems = [
   {
-    path: '/dashboard',
+    path: '/admin',
     name: 'Dashboard',
     icon: <MdDashboard className="icon" />,
   },
@@ -15,63 +15,63 @@ const sideBarItems = [
     name: 'User',
     icon: <FaUser className="icon" />,
     subItems: [
-      { path: '/dashboard/admin/users/all', name: 'All Users' },
-      { path: '/dashboard/admin/users/roles', name: 'Manage Roles' },
+      { path: '/admin/users/all', name: 'All Users' },
+      { path: '/admin/users/roles', name: 'Manage Roles' },
     ],
   },
   {
     name: 'Shop',
     icon: <FiShoppingCart className="icon" />,
     subItems: [
-      { path: '/dashboard/admin/shops/approval', name: 'Approve Shops' },
+      { path: '/admin/shops/approval', name: 'Approve Shops' },
     ],
   },
   {
     name: 'Category',
     icon: <Package className="icon" />,
     subItems: [
-      { path: '/dashboard/admin/category/all', name: 'Manage Categories' },
-      { path: '/dashboard/admin/category/add', name: 'Create Category' },
+      { path: '/admin/category/all', name: 'Manage Categories' },
+      { path: '/admin/category/add', name: 'Create Category' },
     ],
   },
   {
     name: 'Order',
     icon: <FiShoppingCart className="icon" />,
     subItems: [
-      { path: '/dashboard/orders/manage', name: 'Manage Orders' },
-      { path: '/dashboard/orders/details', name: 'Order Details' },
+      { path: '/admin/orders/manage', name: 'Manage Orders' },
+      { path: '/admin/orders/details', name: 'Order Details' },
     ],
   },
   {
     name: 'Transaction',
     icon: <FiTrendingUp className="icon" />,
     subItems: [
-      { path: '/dashboard/transactions/summary', name: 'Transaction Summary' },
-      { path: '/dashboard/transactions/history', name: 'Transaction History' },
+      { path: '/admin/transactions/summary', name: 'Transaction Summary' },
+      { path: '/admin/transactions/history', name: 'Transaction History' },
     ],
   },
   {
     name: 'Settings',
     icon: <FiSettings className="icon" />,
     subItems: [
-      { path: '/dashboard/settings/seo', name: 'SEO Metadata' },
-      { path: '/dashboard/settings/policies', name: 'Policies & Terms' },
+      { path: '/admin/settings/seo', name: 'SEO Metadata' },
+      { path: '/admin/settings/policies', name: 'Policies & Terms' },
     ],
   },
   {
     name: 'Notifications',
     icon: <MdNotifications className="icon" />,
     subItems: [
-      { path: '/dashboard/notifications/all', name: 'All Notifications' },
-      { path: '/dashboard/notifications/unread', name: 'Unread Notifications' },
+      { path: '/admin/notifications/all', name: 'All Notifications' },
+      { path: '/admin/notifications/unread', name: 'Unread Notifications' },
     ],
   },
   {
     name: 'Analytics',
     icon: <MdAnalytics className="icon" />,
     subItems: [
-      { path: '/dashboard/analytics/sales', name: 'Sales Analytics' },
-      { path: '/dashboard/analytics/user-activity', name: 'User Activity' },
+      { path: '/admin/analytics/sales', name: 'Sales Analytics' },
+      { path: '/admin/analytics/user-activity', name: 'User Activity' },
     ],
   },
 ];

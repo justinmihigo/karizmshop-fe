@@ -26,6 +26,7 @@ import AllCategories from "../components/dashboard/Artist/Category/AllCategory.t
 import AddMusicForm from "../components/dashboard/Artist/music/AddMusic.tsx";
 import AllMusicTable from "../components/dashboard/Artist/music/AllMusic.tsx";
 import AllProducts from "../components/dashboard/Product/AllProducts.tsx";
+import AdminDashboard from "../Layout/Dashboard.layout.tsx"
 import Cart from "../pages/Cart.page.tsx";
 import Wishlist from "../pages/Wishlist.page.tsx";
 import Checkout from "../pages/checkout.page.tsx";
@@ -36,6 +37,8 @@ import UserManage from "../components/dashboard/Admin/UserManage.tsx";
 import ShopApprovalTable from "../components/dashboard/Admin/ApprovalShop.tsx";
 import AdminAddCategoryForm from "../components/dashboard/Admin/Category/AddCategoryForm.tsx";
 import AdminAllCategories from "../components/dashboard/Admin/Category/AllCategory.tsx";
+import AdminDashboardHome from "../pages/AdminDashboard.page.tsx";
+import SalesAnalytics from "../pages/SalesAnalytics.page.tsx";
 const AppRoutes: FunctionComponent = () => {
   return (
     <>
@@ -82,16 +85,19 @@ const AppRoutes: FunctionComponent = () => {
           <Route path="/dashboard/music/all" element={<AllMusicTable />} />
           </Route>
           <Route  element={<AdminDashbordLayout />}>
-          <Route index path="/dashboard/admin" element={<AdminDashHome />} />
-          <Route path="/dashboard/admin/users/roles" element={<TableUserRole />} />
-          <Route path="/dashboard/admin/users/all" element={<UserManage />} />
-          <Route path="/dashboard/admin/shops/approval" element={<ShopApprovalTable />} />
+          <Route index path="/admin" element={<AdminDashboardHome />} />
+          <Route path="/admin/users/roles" element={<TableUserRole />} />
+          <Route path="/admin/users/all" element={<UserManage />} />
+          <Route path="/admin/shops/approval" element={<ShopApprovalTable />} />
 
-          <Route path="/dashboard/admin/category/add" element={<AdminAddCategoryForm />} />
-          <Route path="/dashboard/admin/category/all" element={<AdminAllCategories />} />
-
+          <Route path="/admin/category/add" element={<AdminAddCategoryForm />} />
+          <Route path="/admin/category/all" element={<AdminAllCategories />} />
+          <Route path="/admin/analytics/sales" element={<SalesAnalytics />} />
 
           </Route>
+          {/* <Route element={<AdminDashboard/>}>
+              <Route index path="/admin" element={<AdminDashboardHome/>}/>
+          </Route> */}
         </Routes>
       </BrowserRouter>
     </>
