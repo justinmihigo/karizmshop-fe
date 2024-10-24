@@ -13,7 +13,7 @@ export interface ProductCard {
     owner?: string;
     onClick?: Function;
 }
-const productCard = ({ name, type, price, image, description, discount, rating, owner, onClick }: ProductCard) => {
+const productCard = ({ name, type, price, image, description, discount, rating }: ProductCard) => {
     return (
         <>
             <div>

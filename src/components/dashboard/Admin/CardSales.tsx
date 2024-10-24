@@ -1,17 +1,8 @@
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 const TotalSalesCard = ({title , icon ,totalSales, percentageChange }:any) => {
-  const formatCurrency = (amount:number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'UGX',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(amount);
-  };
-
+ 
   const isPositiveChange = percentageChange >= 0;
 
   return (

@@ -9,14 +9,12 @@ import OrderTracking, { PaymentSuccess, TransactionFail } from "../components/di
 import { useState } from "react"
 
 const Checkout = () => {
-    const [hasFailed,setHasFailed]= useState<boolean>(false)
     const [hasSuccess,setHasSuccess]= useState<boolean>(false)
-    const [viewOrder, setViewOrder]= useState<boolean>(false)
     return (
         <>
-        <TransactionFail flag={hasFailed}/>
-        <PaymentSuccess flag={true}/>
-        <OrderTracking flag={viewOrder}/>
+        <TransactionFail flag={false}/>
+        <PaymentSuccess flag={hasSuccess}/>
+        <OrderTracking flag={false}/>
             <div className="w-[80%] m-auto py-5">
                 <div className="flex max-[634px]:flex-col flex-row justify-between items-center">
                     <div className="w-[50%] max-[330px]:w-full max-[634px]:w-full">

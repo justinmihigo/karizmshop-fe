@@ -1,4 +1,3 @@
-import React from 'react';
 import main from "../../assets/main.png";
 
 const sizes = ['L', 'M', 'S'];

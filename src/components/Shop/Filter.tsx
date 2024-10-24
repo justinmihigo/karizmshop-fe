@@ -32,7 +32,7 @@ const Filter: FunctionComponent = () => {
     const [value1, setValue1] = useState<number[]>([0, 100000]);
 
     const handleChange1 = (
-        event: Event,
+        _event: Event,
         newValue: number | number[],
         activeThumb: number,
     ) => {
@@ -47,6 +47,8 @@ const Filter: FunctionComponent = () => {
         }
     };
     useEffect(() => {
+        const varr= index;
+        varr;
         const timer =
             setInterval(() => {
                 setIndex((prevIndex) => (prevIndex + 1) % slides.length);

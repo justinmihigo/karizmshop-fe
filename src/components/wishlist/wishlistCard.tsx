@@ -1,4 +1,3 @@
-import React from 'react';
 import { CancelRounded } from '@mui/icons-material';
 import { Rating } from '@mui/material';
 import main from "../../assets/main.png";

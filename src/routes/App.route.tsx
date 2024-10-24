@@ -26,12 +26,10 @@ import AllCategories from "../components/dashboard/Artist/Category/AllCategory.t
 import AddMusicForm from "../components/dashboard/Artist/music/AddMusic.tsx";
 import AllMusicTable from "../components/dashboard/Artist/music/AllMusic.tsx";
 import AllProducts from "../components/dashboard/Product/AllProducts.tsx";
-import AdminDashboard from "../Layout/Dashboard.layout.tsx"
 import Cart from "../pages/Cart.page.tsx";
 import Wishlist from "../pages/Wishlist.page.tsx";
 import Checkout from "../pages/checkout.page.tsx";
 import AdminDashbordLayout from "../components/dashboard/Admin/AdminDashbordLayout.tsx";
-import AdminDashHome from "../components/dashboard/Admin/AdminDashHome.tsx";
 import TableUserRole from "../components/dashboard/Admin/TableUserRole.tsx";
 import UserManage from "../components/dashboard/Admin/UserManage.tsx";
 import ShopApprovalTable from "../components/dashboard/Admin/ApprovalShop.tsx";
